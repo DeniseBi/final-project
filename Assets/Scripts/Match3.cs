@@ -16,8 +16,14 @@ public class Match3 : ScreenBuild
 
     public void check3()
     {
-       
-        
+        StartCoroutine(CheckMatches());
+    }
+
+    //  wait until all the clocks fall before destroying them
+
+    IEnumerator CheckMatches()
+    {
+        yield return new WaitForSeconds(1);
 
         for (int y = 0; y < rowhight; y++)
         {
@@ -28,31 +34,31 @@ public class Match3 : ScreenBuild
                 tile = Tilelist[x, y];
                 chackmatchingtile.Add(tile);
                 for (int CheckingmatchesX = x + 1;
-                    CheckingmatchesX < rowwidth  &&
+                    CheckingmatchesX < rowwidth &&
                     Tilelist[CheckingmatchesX, y] != null && tile != null &&
                     tile.getcolor() == Tilelist[CheckingmatchesX, y].getcolor();
                     CheckingmatchesX++)
-                
-                  
-                    {
-                        
-                            tile = Tilelist[CheckingmatchesX, y];
-                            chackmatchingtile.Add(tile);
 
-                        
-                        
-                    }
+
+                {
+
+                    tile = Tilelist[CheckingmatchesX, y];
+                    chackmatchingtile.Add(tile);
+
+
+
+                }
                 if (chackmatchingtile.Count() >= 3)
-                    {
-                        foreach (Box item in chackmatchingtile)
-                            if (!matchingtile.Contains(item))
-                            {
-                                matchingtile.Add(item);
-                            }
-                    }
-                    chackmatchingtile.Clear();
-                
-             
+                {
+                    foreach (Box item in chackmatchingtile)
+                        if (!matchingtile.Contains(item))
+                        {
+                            matchingtile.Add(item);
+                        }
+                }
+                chackmatchingtile.Clear();
+
+
 
                 //check On Y
 
@@ -60,26 +66,26 @@ public class Match3 : ScreenBuild
                 chackmatchingtile.Add(tile);
                 for (int CheckingmatchesY = y + 1;
                     CheckingmatchesY < rowhight &&
-                    Tilelist[x, CheckingmatchesY] != null && tile != null && 
+                    Tilelist[x, CheckingmatchesY] != null && tile != null &&
                     tile.getcolor() == Tilelist[x, CheckingmatchesY].getcolor();
                     CheckingmatchesY++)
-                    {
+                {
                     tile = Tilelist[x, CheckingmatchesY];
                     chackmatchingtile.Add(tile);
-                               
-                    }
+
+                }
 
                 if (chackmatchingtile.Count() >= 3)
-                    {
-                        foreach (Box item in chackmatchingtile)
-                            if (!matchingtile.Contains(item))
-                            {
-                                matchingtile.Add(item);
-                            }
-                    }
-                    chackmatchingtile.Clear();
+                {
+                    foreach (Box item in chackmatchingtile)
+                        if (!matchingtile.Contains(item))
+                        {
+                            matchingtile.Add(item);
+                        }
+                }
+                chackmatchingtile.Clear();
 
-                
+
             }
         }
         if (matchingtile.Count != 0)
@@ -87,6 +93,7 @@ public class Match3 : ScreenBuild
             destoryboxesMatch();
             check3();
         }
+
     }
 
     // destroying matching tiles
