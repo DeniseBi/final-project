@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Box : MonoBehaviour
 {
-   public int x;
+    public int x;
     public int y;
     private string color;
 
@@ -34,6 +34,4 @@ public class Box : MonoBehaviour
     {
         return color;
     }
-
-
 }

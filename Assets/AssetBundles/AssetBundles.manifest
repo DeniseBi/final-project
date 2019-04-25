@@ -1,0 +1,13 @@
+ManifestFileVersion: 0
+CRC: 3068252647
+AssetBundleManifest:
+  AssetBundleInfos:
+    Info_0:
+      Name: christmasskin
+      Dependencies: {}
+    Info_1:
+      Name: defaultskin
+      Dependencies: {}
+    Info_2:
+      Name: halloweenskin
+      Dependencies: {}

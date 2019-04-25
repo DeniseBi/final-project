@@ -12,19 +12,29 @@ public class Match3 : ScreenBuild
     private Box tile;
     public int Points;
     public int PointsWorth;
-    public Material[]tilecolor;
+    public List<Material> tilecolor;
+
+
+    protected override void Start()
+    {
+        base.Start();
+        Debug.Log("Tilelist " + Tilelist.Length);
+    }
+
 
     public void check3()
     {
         StartCoroutine(CheckMatches());
     }
+    
 
     //  wait until all the clocks fall before destroying them
 
     IEnumerator CheckMatches()
     {
+        Debug.Log("check matches");
         yield return new WaitForSeconds(1);
-
+       
         for (int y = 0; y < rowhight; y++)
         {
             for (int x = 0; x < rowwidth; x++)
@@ -32,6 +42,8 @@ public class Match3 : ScreenBuild
                 //check On X
 
                 tile = Tilelist[x, y];
+                
+               
                 chackmatchingtile.Add(tile);
                 for (int CheckingmatchesX = x + 1;
                     CheckingmatchesX < rowwidth &&
@@ -128,12 +140,16 @@ public class Match3 : ScreenBuild
             {
                 if (y < rowhight - 1)
                  {
+              
                       Tilelist[destroyedTileX, y] = Tilelist[destroyedTileX, y + 1];
                 if(Tilelist[destroyedTileX, y + 1] != null)
                 Tilelist[destroyedTileX, y].setxy(destroyedTileX, y);
                   }
-                else
-                      Tilelist[destroyedTileX, y] = null;
+            else
+            {
+                Tilelist[destroyedTileX, y] = null;
+            }
+            
             }
  
     }
@@ -143,25 +159,31 @@ public class Match3 : ScreenBuild
     //destorying a black box
     public void destoryBlack(Box tile)
     {
+        
+        
         int destroyedTileX = tile.getx();
         int destroyedTileY = tile.gety();
+        
 
-        for (int y = destroyedTileY-1; y <= destroyedTileY +1; y++)
-        {
-            for(int x = destroyedTileX - 1; x <= destroyedTileX + 1; x++)
-             if (y >= 0 && x >= 0 && y < rowhight && x <rowwidth && Tilelist[x, y] != null)
+       for (int y = destroyedTileY-1; y <= destroyedTileY +1; y++)
+        { 
+            for (int x = destroyedTileX - 1; x <= destroyedTileX + 1; x++)
+            {   
+                if (y >= 0 && x >= 0 && y < rowhight && x < rowwidth && Tilelist[x, y] != null)
                 {
-                 
-                        if (!matchingtile.Contains(Tilelist[x, y]))
-                        {
-                            matchingtile.Add(Tilelist[x, y]);
-                           
-                        }
+                    if (!matchingtile.Contains(Tilelist[x, y]))
+                    {  
+                        matchingtile.Add(Tilelist[x, y]);
+
+                    }
 
                 }
-           
+                
+            }
         }
+        
         destoryboxesMatch();
+
     }
 
 

@@ -1,0 +1,57 @@
+ManifestFileVersion: 0
+CRC: 4209049173
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 3ef0b430c234e564520e5b9772fd5eed
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 10aaf93a753257feb02a9373e6a14698
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 23
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 33
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 54
+  Script: {instanceID: 0}
+- Class: 65
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: 10f90c2738d6e5245a689719535040c6, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+Assets:
+- Assets/Skins/Metirials/Chrismass/Blue.mat
+- Assets/Skins/Metirials/Chrismass/Red.mat
+- Assets/Skins/Metirials/Chrismass/Green.mat
+- Assets/Skins/Christmas skin/BlueCube.prefab
+- Assets/Skins/Sprites/Blue_christmas.png
+- Assets/Skins/Christmas skin/RedCube.prefab
+- Assets/Skins/Metirials/Chrismass/White.mat
+- Assets/Skins/Sprites/yellow_christmas.png
+- Assets/Skins/Christmas skin/YellowCube.prefab
+- Assets/Skins/Sprites/red_christmas.png
+- Assets/Skins/Metirials/Chrismass/Black.mat
+- Assets/Skins/Christmas skin/BlackCube.prefab
+- Assets/Skins/Sprites/Black_christmas.png
+- Assets/Skins/Metirials/Chrismass/Yellow.mat
+- Assets/Skins/Christmas skin/WhiteCube.prefab
+- Assets/Skins/Christmas skin/GreenCube.prefab
+- Assets/Skins/Sprites/Green_christmas.png
+- Assets/Skins/Sprites/White_christmas.png
+Dependencies: []
